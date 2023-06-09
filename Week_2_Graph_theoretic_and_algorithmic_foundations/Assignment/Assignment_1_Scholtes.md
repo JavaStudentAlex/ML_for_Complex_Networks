@@ -5,6 +5,7 @@
 
 - [[Tarjan_algorithm]]
 - [[Zero_eigenvalues_in_Laplacian]]
+- [[Define_connected_components_by_eigenvalues]]
 
 
 ## Task:
