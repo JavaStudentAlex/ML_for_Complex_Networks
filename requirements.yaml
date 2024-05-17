@@ -32,5 +32,5 @@ dependencies:
   - pytorch-spline-conv
   - tensorboard
   - pip:
-    - git+https://github.com/pathpy/pathpyG
-    - git+https://github.com/pathpy/pathpy
+    - git+https://github.com/pathpy/pathpyg.git
+    - git+https://github.com/pathpy/pathpy.git
