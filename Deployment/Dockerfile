@@ -49,6 +49,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1 \
     PIP_DEFAULT_TIMEOUT=100 \
     C_FORCE_ROOT=true \
-    REQUIREMENTS_FILE_PATH=requirements.yaml
-COPY ${REQUIREMENTS_FILE_PATH} /tmp/requirements.yaml
-RUN conda env update --file /tmp/requirements.yaml --name base && conda clean -y -a
+    REQUIREMENTS_FILE_PATH=requirements.txt
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+COPY ${REQUIREMENTS_FILE_PATH} /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt --extra-index-url https://download.pytorch.org/whl/cu118 -f https://data.pyg.org/whl/torch-2.3.0+cu118.html \
+    && rm -rf /tmp/requirements.txt
+RUN conda clean -y -a
