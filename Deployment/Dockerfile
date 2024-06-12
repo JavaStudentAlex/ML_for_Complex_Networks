@@ -52,6 +52,5 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     REQUIREMENTS_FILE_PATH=requirements.txt
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel
 COPY ${REQUIREMENTS_FILE_PATH} /tmp/requirements.txt
-RUN pip install --no-cache-dir -r /tmp/requirements.txt --extra-index-url https://download.pytorch.org/whl/cu118 -f https://data.pyg.org/whl/torch-2.3.0+cu118.html \
-    && rm -rf /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt --extra-index-url https://download.pytorch.org/whl/cu118 -f https://data.pyg.org/whl/torch-2.3.0+cu118.html
 RUN conda clean -y -a
