@@ -17,7 +17,7 @@ notebook
 jupyterlab-widgets
 
 # ml
-torch==2.3.0
+torch<2.4.0
 torchvision
 torchaudio
 pyg_lib 
@@ -25,6 +25,7 @@ torch_scatter
 torch_sparse 
 torch_cluster 
 torch_spline_conv
+torch_geometric
 tensorboard
 
 # pathpy
